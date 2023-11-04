@@ -1,9 +1,13 @@
-chrome.tabs.getSelected(null, function(tab){
-    chrome.tabs.sendRequest(tab.id, {method: "getText"}, function(response){
-        if(response.method=="getText"){
-            alltext = response.data;
-        }
-    });
-}); 
+function getText(){
+    return document.body. innerText
+}
+function getHTML(){
+    return document.body.outerHTML
+}
 
-console.log(alltext);
+console.log (getText());
+console.log(getHTML());
+//Gives you all the text on the page
+//Gives you the whole HTML of the page
+
+
