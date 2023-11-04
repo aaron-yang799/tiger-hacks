@@ -1,12 +1,16 @@
 {
+    "name": "Get pages source",
+    "version": "1.1",
     "manifest_version": 3,
-    "name": "The OtherSide",
-    "version": "1.0",
-    "author": "Aaron Yang",
-    "description": "A sample Chrome extension.",
-    "permissions": ["storage", "activeTab", "cookies", "<all_urls>", "scripting"],
+    "description": "Get active tabs or element on that pages source from a popup",
+
     "action": {
-        "default": "The OtherSide",
+        "default_title": "Get pages source",
         "default_popup": "popup.html"
-    }
+    },
+
+    "permissions": [
+        "scripting",
+        "activeTab"
+    ]
 }
