@@ -16,6 +16,3 @@ function grabPageText() {
     console.log(text);
 // Do something with the page text here, like sending it to your extension's popup or background script
 }
-
-
-  
