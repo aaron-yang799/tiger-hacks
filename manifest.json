@@ -8,7 +8,13 @@
         "activeTab"
     ],
     "action":{
-        "default_popup": "index.html"
+        "default_popup": "index.html",
+        "default_popup_options": {
+            "width": 800, 
+            "height": 600, 
+            "left": 100,  
+            "top": 100 
+          }
     },
 
     "content_scripts":  [

@@ -11,3 +11,10 @@ for(elt of paragraphs)
 for (let i = 0; i < para.length; i++) {
     console.log(para[i]);
 }
+
+function decideBox(index, bias_rating){
+    if(index > bias_rating)
+    {
+        
+    }
+}
