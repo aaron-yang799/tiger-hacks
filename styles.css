@@ -1,6 +1,10 @@
 .heading {
     background-color: orange;
-    display: inline-block
+    display: inline-block;
+    width: 100%;
+    margin: 0;  /* Remove any default margin */
+    padding: 0; /* Remove any default padding */
+    color: white;
 }
 
 h1 {
