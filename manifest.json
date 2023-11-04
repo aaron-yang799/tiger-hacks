@@ -8,6 +8,5 @@
     "action": {
         "default": "The OtherSide",
         "default_popup": "popup.html",
-        
     }
 }
