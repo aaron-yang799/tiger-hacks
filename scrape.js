@@ -1,11 +1,13 @@
-const fs = require('fs');
-const csv = require('csv-parser');
-const metascraper = require('metascraper')([
-  require('metascraper-title')(),
-  require('metascraper-description')(),
-  require('metascraper-url')()
-]);
-const got = require('got');
+const {
+    metascraper,
+    metascraperTitle,
+    metascraperDescription,
+    metascraperUrl,
+    got,
+  } = require('./es-wrapper.mjs');
+  
+  // Rest of your code
+  
 
 const csvFP = 'urls.csv';
 
