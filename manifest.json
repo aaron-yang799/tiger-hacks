@@ -1,12 +1,12 @@
 {
     "manifest_version": 3,
-    "name": "My Chrome Extension",
+    "name": "The OtherSide",
     "version": "1.0",
     "author": "Aaron Yang",
     "description": "A sample Chrome extension.",
     "permissions": ["storage", "activeTab", "cookies", "<all_urls>", "scripting"],
     "action": {
         "default": "The OtherSide",
-        "default_popup": "popup.html",
+        "default_popup": "popup.html"
     }
 }
