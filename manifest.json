@@ -7,6 +7,9 @@
         "scripting",
         "activeTab"
     ],
+    "action":{
+        "default_popup": "index.html"
+    },
 
     "content_scripts":  [
         {
