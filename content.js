@@ -101,7 +101,7 @@ const data = {
 
 function getBias(index){
     var indPer = index % 15; //essentially cuts the array into halves so the same operations can be done at their seperate indexes.
-    if(index / 15 == 1){
+    if(index / 15 >= 1){
         if(indPer <= 4){
             return right2;
         }else if(indPer <= 9){
