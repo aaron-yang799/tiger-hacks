@@ -75,6 +75,12 @@ const infoIds = [
     "SumInfo", "OppInfo", "CentBox"
 ];
 
+const biasList = [
+    "SumR", "SumC", "SumL",
+    "OppR", "OppC", "SumL"
+]
+
+
 const data = {
     labels: ['Right Lean', 'Central', 'Left Lean'],
     datasets: [{
@@ -86,12 +92,22 @@ const data = {
 
 function getBias(index){
     var indPer = index % 15; //essentially cuts the array into halves so the same operations can be done at their seperate indexes.
-    if(indPer <= 4){
-        return right;
-    }else if(indPer <= 9){
-        return center;
+    if(index / 15 == 1){
+        if(indPer <= 4){
+            return right2;
+        }else if(indPer <= 9){
+            return center2;
+        }else{
+            return left2;
+        }
     }else{
-        return left;
+        if(indPer <= 4){
+            return right;
+        }else if(indPer <= 9){
+            return center;
+        }else{
+            return left;
+        }
     }
 }
 
@@ -135,14 +151,14 @@ function displayBias(){
     var i = 0;
     // Find the paragraph element by its ID
     elements.forEach(function(element) {
-        const elementName = [i];
-        var paragraphElement = document.getElementById(elementName);
-
+        const elementName = biasList[i];
+        var h4Element = document.getElementById(elementName);
+        
         // Create a text node with your content
         var textNode = document.createTextNode(contentToWrite);
 
         // Append the text node to the paragraph element
-        paragraphElement.appendChild(textNode);
+        h4Element.appendChild(textNode);
         i = i + 1;
     });
 }
