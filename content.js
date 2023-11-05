@@ -39,7 +39,7 @@ for (var i = 0; i < para.length; i++) {
 
 console.log(allText);
 
-let queryString = allText.substring(0,500); 
+let queryString = allText.substring(0,500);
 
 query({"inputs": queryString}).then((response) => {
     console.log(response);
@@ -52,8 +52,14 @@ query({"inputs": queryString}).then((response) => {
     var jsonObject = JSON.parse(response);
     var numbersArray = extractNumbers(jsonObject); // Get all numbers in an array
     console.log(numbersArray); //prints array
-});
+    var left = numbersArray[0] * 100;
+    var center = numbersArray[1] * 100;
+    var right = numbersArray[2] * 100;
 
+    console.log(left);
+    console.log(center);
+    console.log(right);
+});
 
 const boxIds = [
     "SumBox1", "SumBox2", "SumBox3", "SumBox4", "SumBox5",
