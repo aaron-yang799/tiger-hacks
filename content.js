@@ -4,7 +4,7 @@ const right = 3.9898;
 
 const left2 = 6.0900;
 const center2 = 3.7268;
-const right2 = 901832;
+const right2 = 90.1832;
 
 async function query(data) {
 	const response = await fetch(
