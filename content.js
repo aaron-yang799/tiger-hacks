@@ -114,6 +114,34 @@ function decidePie(){
     const myPieChart = new Chart(ctx, config);
 }
 
+//This is the utilization of chatgpt API to generate a summary of the webpage content
+const content = "I need a summary of this message."
+const apiKey = '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';
+const apiUrl = 'https://api.openai.com/v1/engines/davinci/completions';
+
+var helpme = `Summarize the content: ${content}`;
+console.log(helpme);
+//this fetch call uses the url and key to gain access to gpts API. Then a prompt is created that requests a summary of the provided content of max character size 150.
+fetch(apiUrl, {
+    method: "POST", //means we are sending data to GPT
+    headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({ 
+        prompt: `Summarize the webpage: ${content}`,
+        max_tokens: 150,
+    }),
+})
+    .then((response) => response.json())
+    .then((data2) => {
+        const summary = data2.choices[0].text;
+        console.log(summary);
+    })
+    .catch((error) => {
+        console.error("Error:", error);
+    });
+
 window.onload = function() {
     //decideBox();
     decidePie();
