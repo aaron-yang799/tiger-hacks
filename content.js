@@ -2,7 +2,7 @@ async function query(data) {
 	const response = await fetch(
 		"https://api-inference.huggingface.co/models/valurank/distilbert-allsides",
 		{
-			headers: { Authorization: "Bearer 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" },
+			headers: { Authorization: "Bearer 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" },
 			method: "POST",
 			body: JSON.stringify(data),
 		}
@@ -26,29 +26,40 @@ function extractNumbers(obj, numbers = []) {
   }
 
 
-const para = [];
+
 console.log("CHEMOI");
-let paragraphs = document.getElementsByTagName('p');
-for(elt of paragraphs)
-{
-    para.push(elt);
+
+var para = document.getElementsByTagName('p');
+var allText = '';
+
+for (var i = 0; i < para.length; i++) {
+    // Concatenate the text content of each <p> element
+    allText += para[i].textContent + ' '; // Adding a space for readability
 }
 
-let test = para.join(". ");
-console.log(test);
-query({"inputs": test}).then((response) => {
-	console.log(response);
-	const sortOrder = { 'left': 1, 'center': 2, 'right': 3 };
+console.log(allText);
 
-	response[0].sort((a, b) => sortOrder[a.label] - sortOrder[b.label]);
+let queryString = allText.substring(0,500);
 
-	//console.log(JSON.stringify(response));
-	response = JSON.stringify(response);
-	var jsonObject = JSON.parse(response);
-	var numbersArray = extractNumbers(jsonObject); // Get all numbers in an array
+query({"inputs": queryString}).then((response) => {
+    console.log(response);
+    const sortOrder = { 'left': 1, 'center': 2, 'right': 3 };
+
+    response[0].sort((a, b) => sortOrder[a.label] - sortOrder[b.label]);
+
+    //console.log(JSON.stringify(response));
+    response = JSON.stringify(response);
+    var jsonObject = JSON.parse(response);
+    var numbersArray = extractNumbers(jsonObject); // Get all numbers in an array
     console.log(numbersArray); //prints array
-});
+    var left = numbersArray[0] * 100;
+    var center = numbersArray[1] * 100;
+    var right = numbersArray[2] * 100;
 
+    console.log(left);
+    console.log(center);
+    console.log(right);
+});
 
 const boxIds = [
     "SumBoxR1", "SumBoxR2", "SumBoxR3", "SumBoxR4", "SumBoxR5",
