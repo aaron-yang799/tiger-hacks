@@ -1,6 +1,6 @@
-left = 91.0102;
-center = 5.0000;
-right = 3.9898;
+const left = 91.0102;
+const center = 5.0000;
+const right = 3.9898;
 
 async function query(data) {
 	const response = await fetch(
