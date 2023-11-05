@@ -20,8 +20,8 @@ h1 {
 
 body {
     margin: 0; /* Remove default margin on the body */
-    padding: 0; /* Remove default padding on the body */
-  }
+    padding: 0 /* Remove default padding on the body */
+}
 
   .mini-box {
     width: 20px; /* Set the width of each mini box */
