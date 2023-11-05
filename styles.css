@@ -60,6 +60,11 @@ h4{
 #myPieChart{
     width: 70%;
     height: auto;
+    display:inline-block
+}
+
+p{
+    display:inline-block;
 }
 
 
