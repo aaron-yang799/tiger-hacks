@@ -26,15 +26,9 @@ function extractNumbers(obj, numbers = []) {
   }
 
 
-//const para = [];
+
 console.log("CHEMOI");
-/*
-let paragraphs = document.getElementsByTagName('p');
-for(elt of paragraphs)
-{
-    para.push(elt);
-}
-*/
+
 var para = document.getElementsByTagName('p');
 var allText = '';
 
