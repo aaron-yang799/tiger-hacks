@@ -85,8 +85,27 @@ query({"inputs": queryString}).then((response) => {
         console.log(para[i]);
     }
     
-    function getBias(){
-        return 1
+    function getBias(index){
+        var indPer = index % 15; //essentially cuts the array into halves so the same operations can be done at their seperate indexes.
+        if(indPer <= 4){
+            return right;
+        }else if(indPer <= 9){
+            return center;
+        }else{
+            return left;
+        }
+    }
+
+    function getColor(index){
+        var indPer = index % 15; //use array index to decide what color to make the box upon conditions of course.
+        console.log(indPer);
+        if(indPer <= 4){
+            return 'red';
+        }else if(indPer <= 9){
+            return 'black';
+        }else{
+            return 'blue';
+        }
     }
     
     function decideBox(){
@@ -94,16 +113,17 @@ query({"inputs": queryString}).then((response) => {
         var i = 0;
         elements.forEach(function(element) {
             const elementName = boxIds[i];
-            const bias_rating = getBias();
+            const bias_rating = getBias(i);
+            const bias_color = getColor(i);
             const elemIndMatch = elementName.match(/\d/);
             if (elemIndMatch) {
-                const elemInd = parseInt(elemIndMatch[0], 10); // Extract and convert to an integer
+                const elemInd = parseInt(elemIndMatch[0], 10) * 20; // Extract and convert to an integer
                 console.log(elemInd);
                 if(elemInd > bias_rating)
                 {
-                    element.style.backgroundColor = 'rgb(235, 235, 235)'; 
+                    element.style.backgroundColor = 'grey'; 
                 }else{
-                    element.style.backgroundColor = 'green';
+                    element.style.backgroundColor = bias_color;
                 };
             }
             i = i + 1;
@@ -158,7 +178,6 @@ query({"inputs": queryString}).then((response) => {
     
     window.onload = function() {
         decideBox();
-        //decidePie();
         displayBias();
     };
 });
