@@ -20,7 +20,9 @@ h1 {
 
 body {
     margin: 0; /* Remove default margin on the body */
-    padding: 0 /* Remove default padding on the body */
+    padding: 0; /* Remove default padding on the body */
+    width: 400px; /* Resizes the width*/
+    height: 200px; /*Resizes the height*/
 }
 
   .mini-box {
