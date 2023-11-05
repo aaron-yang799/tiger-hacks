@@ -1,0 +1,2 @@
+ChatGBT - https://chat.openai.com/
+Hugging Face Trained Data Model - https://huggingface.co/valurank/distilbert-allsides
