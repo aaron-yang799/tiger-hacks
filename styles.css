@@ -54,16 +54,16 @@ h4{
     box-shadow: 5px 5px 20px rgba(.1,.1,.1,.1);
     border: 1px solid #b3adad; 
     margin: 0 50% 0 0;
-    display:inline-block;
+    display:inline-flex;
 }
 
 #myPieChart{
     width: 70%;
     height: auto;
-    display:inline-block
+    display:inline-flex
 }
 
-p{
+#chart-info{
     display:inline-block;
 }
 
