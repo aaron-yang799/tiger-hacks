@@ -30,6 +30,6 @@ async function query(data) {
 	return result;
 }
 
-query({"inputs": "I like you. I love you"}).then((response) => {
+query({"inputs": "Trump denies any wrongdoing in all legal matters and has pleaded not guilty in all of the criminal cases – which relate not just to his efforts to remain president by overturning the 2020 election and his treatment of classified material after his presidency but also to a hush-money scheme that may have helped him win the White House in 2016."}).then((response) => {
 	console.log(JSON.stringify(response));
 });
