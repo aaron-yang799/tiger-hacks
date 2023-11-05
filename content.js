@@ -42,7 +42,7 @@ console.log(allText);
 let queryString = allText.substring(0,500);
 
 query({"inputs": queryString}).then((response) => {
-    console.log(response);
+    //console.log(response);
     const sortOrder = { 'left': 1, 'center': 2, 'right': 3 };
 
     response[0].sort((a, b) => sortOrder[a.label] - sortOrder[b.label]);
@@ -81,9 +81,6 @@ query({"inputs": queryString}).then((response) => {
         }],
     };
     
-    for (let i = 0; i < para.length; i++) {
-        console.log(para[i]);
-    }
     
     function getBias(){
         return 1
