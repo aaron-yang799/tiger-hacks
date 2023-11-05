@@ -6,6 +6,11 @@ const left2 = 6.0900;
 const center2 = 3.7268;
 const right2 = 90.1832;
 
+const array = [
+    right, center, left,
+    right2, center2, left2
+];
+
 async function query(data) {
 	const response = await fetch(
 		"https://api-inference.huggingface.co/models/valurank/distilbert-allsides",
@@ -157,9 +162,9 @@ function displayBias(){
     elements.forEach(function(element) {
         const elementName = biasList[i];
         var h4Element = document.getElementById(elementName);
-        
+
         // Create a text node with your content
-        var textNode = document.createTextNode(contentToWrite);
+        var textNode = document.createTextNode(array[i]);
 
         // Append the text node to the paragraph element
         h4Element.appendChild(textNode);
