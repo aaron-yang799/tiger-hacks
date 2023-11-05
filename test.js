@@ -44,7 +44,11 @@ function extractNumbers(obj, numbers = []) {
 	return numbers;
   }
 
-query({"inputs": "He alleges a “witch hunt” against him and says the varied legal actions are examples of election interference to keep him from the White House. But each trial has its own distinct storyline to follow."}).then((response) => {
+var test = ["I love donald trump", "I hate obama", "I love donald trump becasue i met him."];
+
+var joined = test.join(". ");
+
+query({"inputs": joined}).then((response) => {
 	//console.log(JSON.stringify(response));
 	response = JSON.stringify(response);
 	var jsonObject = JSON.parse(response);
