@@ -33,7 +33,7 @@ body {
     font-weight: bold;
     border: 1px solid #dadada;
     display: inline-flex;
-    
+    vertical-align: middle;
   }
   
 .page{
