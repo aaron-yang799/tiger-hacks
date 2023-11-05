@@ -25,18 +25,18 @@ body {
     height: 200px; /*Resizes the height*/
 }
 
-  .mini-box {
-    width: 20px; /* Set the width of each mini box */
-    height: 20px; /* Set the height of each mini box */
-    /*background-color: rgb(235, 235, 235); Default background color */
-    text-align: center;
-    line-height: 30px;
-    margin: 5px; /* Add spacing between mini boxes */
-    font-weight: bold;
-    border: 1px solid #dadada;
-    display: inline-flex;
-    vertical-align: middle;
-  }
+.mini-box {
+  width: 20px; /* Set the width of each mini box */
+  height: 20px; /* Set the height of each mini box */
+  /*background-color: rgb(235, 235, 235); Default background color */
+  text-align: center;
+  line-height: 30px;
+  margin: 5px; /* Add spacing between mini boxes */
+  font-weight: bold;
+  border: 1px solid #dadada;
+  display: inline-flex;
+  vertical-align: middle;
+}
   
 .page{
     padding: 10px 10px 10px 20px;
