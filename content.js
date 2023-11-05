@@ -19,8 +19,10 @@ for (let i = 0; i < para.length; i++) {
 }
 
 function getBias(){
-    return 2
+    return 1
 }
+
+
 
 function decideBox(){
     const elements = document.querySelectorAll('.mini-box')
@@ -51,3 +53,7 @@ function allBox(){
         console.log('fuck')
     })
 }
+
+window.onload = function() {
+    decideBox();
+};

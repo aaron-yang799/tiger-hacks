@@ -5,45 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="content.js"></script>
-    <script>
+    <!--script to manipulate colors of rating boxes-->
+    <!--<script>
         window.onload = function() {
             decideBox();
         };
-    </script>
+    </script>-->
     <title>Document</title>
 </head>
 <body>
+    <!--Header of File with Title. THATS IT-->
     <div class="heading">
         <h1 class="title" id="title">The Otherside</h1>
     </div>
+    <!--The main page with all of the data-->
     <div class="page">
         <div class = "sections">
-            <h3 class = "section-title">Summary of url/topic</h3>
-            <body>
-                Fuck Bitches and get money ya fm. Okay so basically I am writing this to get an idea of how the text is gonna look when we eventually have something to dsiplayu on the site. However, that is easi
-                er said than done because there is more to consider than foreseen. When we make a summary, how do we specify the length of the summary. How does it know what is essential?! All we can hope is that the AI we have is 
-                already able to do that ig.
-            </body>
-            <br>
-            <div class = "box-container">
-                <h4>Bias Rating</h4><div class="mini-box" id="SumBox1"></div><div class="mini-box" id="SumBox2"></div><div class="mini-box" id="SumBox3"></div><div class="mini-box" id="SumBox4"></div><div class="mini-box" id="SumBox5"></div>
+            <!--Content section divided into 3 sections-->
+            <div>
+                <!---->
+                <h3 class = "section-title">Summary of url/topic</h3>
+                <body>
+                    Fuck Bitches and get money ya fm. Okay so basically I am writing this to get an idea of how the text is gonna look when we eventually have something to dsiplayu on the site. However, that is easi
+                    er said than done because there is more to consider than foreseen. When we make a summary, how do we specify the length of the summary. How does it know what is essential?! All we can hope is that the AI we have is 
+                    already able to do that ig.
+                </body>
+                <br>
+                <div class = "box-container">
+                    <h4>Bias Rating</h4><div class="mini-box" id="SumBox1"></div><div class="mini-box" id="SumBox2"></div><div class="mini-box" id="SumBox3"></div><div class="mini-box" id="SumBox4"></div><div class="mini-box" id="SumBox5"></div>
+                </div>
             </div>
-            <h3 class = "section-title">Opposite Perspective</h3>
-            <body>
-                Back at it again. The opposite Perspective is going to be the opposite of the rating that was given to 
-                the given url. The model we are using gives a rating to all of the sources that it has been fed. So it shoould be an easy computation. Something along the lines of 'maximum of rating scale - rating of given source = opposite bias'. Then we can provide the link to the opposite source, and a summary of the differences.
-            </body>
-            <br>
-            <div class = "box-container">
-                <h4>Bias Rating</h4><div class="mini-box" id="OppBox1"></div><div class="mini-box" id="OppBox2"></div><div class="mini-box" id="OppBox3"></div><div class="mini-box" id="OppBox4"></div><div class="mini-box" id="OppBox5"></div>
+            <div>
+                <h3 class = "section-title">Opposite Perspective</h3>
+                <body>
+                    Back at it again. The opposite Perspective is going to be the opposite of the rating that was given to 
+                    the given url. The model we are using gives a rating to all of the sources that it has been fed. So it shoould be an easy computation. Something along the lines of 'maximum of rating scale - rating of given source = opposite bias'. Then we can provide the link to the opposite source, and a summary of the differences.
+                </body>
+                <br>
+                <div class = "box-container">
+                    <h4>Bias Rating</h4><div class="mini-box" id="OppBox1"></div><div class="mini-box" id="OppBox2"></div><div class="mini-box" id="OppBox3"></div><div class="mini-box" id="OppBox4"></div><div class="mini-box" id="OppBox5"></div>
+                </div>
             </div>
-            <h3 class = "section-title">Centralized Opinion</h3>
-            <body>
-                This going to be the source on the topic with the most centralized rating. And this body will be the summary of that centralized text.Back at it again. The opposite Perspective is going to be the opposite of the rating that was given to the given url. The model we are using gives a rating to all of the sources that it has been fed. So it shoould be an easy computation. Something along the lines of 'maximum of rating scale - rating of given source = opposite bias'. Then we can provide the link to the opposite source, and a summary of the differences.
-            </body>
-            <br>
-            <div class = "box-container">
-                <h4>Bias Rating</h4><div class="mini-box" id="CentBox1"></div><div class="mini-box" id="CentBox2"></div><div class="mini-box" id="CentBox3"></div><div class="mini-box" id="CentBox4"></div><div class="mini-box" id="CentBox5"></div>
+            <div>
+                <h3 class = "section-title">Centralized Opinion</h3>
+                <body>
+                    This going to be the source on the topic with the most centralized rating. And this body will be the summary of that centralized text.Back at it again. The opposite Perspective is going to be the opposite of the rating that was given to the given url. The model we are using gives a rating to all of the sources that it has been fed. So it shoould be an easy computation. Something along the lines of 'maximum of rating scale - rating of given source = opposite bias'. Then we can provide the link to the opposite source, and a summary of the differences.
+                </body>
+                <br>
+                <div class = "box-container">
+                    <h4>Bias Rating</h4><div class="mini-box" id="CentBox1"></div><div class="mini-box" id="CentBox2"></div><div class="mini-box" id="CentBox3"></div><div class="mini-box" id="CentBox4"></div><div class="mini-box" id="CentBox5"></div>
+                </div>
             </div>
         </div>
     </div>
