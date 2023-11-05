@@ -24,12 +24,12 @@ function extractNumbers(obj, numbers = []) {
 	}
 	return numbers;
   }
-/* Test to join an array of strings, they get seperated by a period and space
+//Test to join an array of strings, they get seperated by a period and space
 let test = ["I love trump", "I love obama", "Animals are cool"];
 
 test = test.join(". ");
 console.log(test)
-*/
+
 query({"inputs": test}).then((response) => {
 	console.log(response);
 	const sortOrder = { 'left': 1, 'center': 2, 'right': 3 };
