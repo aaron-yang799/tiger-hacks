@@ -1,59 +1,64 @@
-console.log("CHORMY");
-
-const para = [];
-
-let paragraphs = document.getElementsByTagName('p');
-for(elt of paragraphs)
-{
-    para.push(elt);
+async function query(data) {
+	const response = await fetch(
+		"https://api-inference.huggingface.co/models/valurank/distilbert-allsides",
+		{
+			headers: { Authorization: "Bearer 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" },
+			method: "POST",
+			body: JSON.stringify(data),
+		}
+	);
+	const result = await response.json();
+	return result;
 }
 
-const boxIds = [
-    "SumBox1", "SumBox2", "SumBox3", "SumBox4", "SumBox5",
-    "OppBox1", "OppBox2", "OppBox3", "OppBox4", "OppBox5",
-    "CentBox1", "CentBox2", "CentBox3", "CentBox4", "CentBox5"
-];
+function extractNumbers(obj, numbers = []) {
+	// Traverse all the object's properties
+	for (let key in obj) {
+	  if (typeof obj[key] === 'number') {
+		// If the property is a number, push it to the numbers array
+		numbers.push(obj[key]);
+	  } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+		// If the property is an object, recurse into it
+		extractNumbers(obj[key], numbers);
+	  }
+	}
+	return numbers;
+  }
 
-for (let i = 0; i < para.length; i++) {
-    console.log(para[i]);
+
+
+console.log("CHEMOI");
+
+var para = document.getElementsByTagName('p');
+var allText = '';
+
+for (var i = 0; i < para.length; i++) {
+    // Concatenate the text content of each <p> element
+    allText += para[i].textContent + ' '; // Adding a space for readability
 }
 
-function getBias(){
-    return 1
-}
+console.log(allText);
+
+let queryString = allText.substring(0,500);
+
+query({"inputs": queryString}).then((response) => {
+    //console.log(response);
+    const sortOrder = { 'left': 1, 'center': 2, 'right': 3 };
+
+    response[0].sort((a, b) => sortOrder[a.label] - sortOrder[b.label]);
+
+    //console.log(JSON.stringify(response));
+    response = JSON.stringify(response);
+    var jsonObject = JSON.parse(response);
+    var numbersArray = extractNumbers(jsonObject); // Get all numbers in an array
+    console.log(numbersArray); //prints array
+    var left = numbersArray[0] * 100;
+    var center = numbersArray[1] * 100;
+    var right = numbersArray[2] * 100;
+
+    console.log(left);
+    console.log(center);
+    console.log(right);
 
 
-
-function decideBox(){
-    const elements = document.querySelectorAll('.mini-box')
-    var i = 0;
-    elements.forEach(function(element) {
-        const elementName = boxIds[i];
-        console.log(elementName);
-        const bias_rating = getBias();
-        const elemIndMatch = elementName.match(/\d/);
-        if (elemIndMatch) {
-            const elemInd = parseInt(elemIndMatch[0], 10); // Extract and convert to an integer
-            console.log(elemInd);
-            if(elemInd > bias_rating)
-            {
-                element.style.backgroundColor = 'rgb(235, 235, 235)'; 
-            }else{
-                element.style.backgroundColor = 'green';
-            };
-        }else console.log("shit");
-        i = i + 1;
-    });
-}
-
-function allBox(){
-    const elements = document.querySelectorAll('.mini-box')
-    elements.forEach(function(element) {
-        element.style.backgroundColor = 'green';
-        console.log('fuck')
-    })
-}
-
-window.onload = function() {
-    decideBox();
-};
+});
