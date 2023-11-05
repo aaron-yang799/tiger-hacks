@@ -27,7 +27,7 @@ function extractNumbers(obj, numbers = []) {
 
 
 const para = [];
-
+console.log("CHEMOI");
 let paragraphs = document.getElementsByTagName('p');
 for(elt of paragraphs)
 {
@@ -35,7 +35,7 @@ for(elt of paragraphs)
 }
 
 let test = para.join(". ");
-
+console.log(test);
 query({"inputs": test}).then((response) => {
 	console.log(response);
 	const sortOrder = { 'left': 1, 'center': 2, 'right': 3 };
@@ -71,8 +71,6 @@ for (let i = 0; i < para.length; i++) {
 function getBias(){
     return 1
 }
-
-
 
 function decideBox(){
     const elements = document.querySelectorAll('.mini-box')
