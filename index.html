@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="styles.css">
     <script src="content.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <!--script to manipulate colors of rating boxes-->
     <!--<script>
         window.onload = function() {
@@ -31,8 +33,11 @@
                     already able to do that ig.
                 </body>
                 <br>
-                <div class = "box-container">
+                <!--<div class = "box-container">
                     <h4>Bias Rating</h4><div class="mini-box" id="SumBox1"></div><div class="mini-box" id="SumBox2"></div><div class="mini-box" id="SumBox3"></div><div class="mini-box" id="SumBox4"></div><div class="mini-box" id="SumBox5"></div>
+                </div>-->
+                <div class="floating-box"> 
+                    <canvas id="myPieChart"></canvas>
                 </div>
             </div>
             <div>

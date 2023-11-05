@@ -48,5 +48,20 @@ h4{
     display:inline-block;
 }
   
+.floating-box {
+    width: 85%;
+    height:200px;
+    box-shadow: 5px 5px 20px rgba(.1,.1,.1,.1);
+    border: 1px solid #b3adad; 
+    margin: 0 50% 0 0;
+    display:inline-block;
+}
+
+#myPieChart{
+    width: 70%;
+    height: auto;
+}
+
+
   
   
