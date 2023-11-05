@@ -30,6 +30,25 @@ async function query(data) {
 	return result;
 }
 
+function extractNumbers(obj, numbers = []) {
+	// Traverse all the object's properties
+	for (let key in obj) {
+	  if (typeof obj[key] === 'number') {
+		// If the property is a number, push it to the numbers array
+		numbers.push(obj[key]);
+	  } else if (typeof obj[key] === 'object' && obj[key] !== null) {
+		// If the property is an object, recurse into it
+		extractNumbers(obj[key], numbers);
+	  }
+	}
+	return numbers;
+  }
+
 query({"inputs": "He alleges a “witch hunt” against him and says the varied legal actions are examples of election interference to keep him from the White House. But each trial has its own distinct storyline to follow."}).then((response) => {
-	console.log(JSON.stringify(response));
+	//console.log(JSON.stringify(response));
+	response = JSON.stringify(response);
+	var jsonObject = JSON.parse(response);
+	var numbersArray = extractNumbers(jsonObject); // Get all numbers in an array
+	console.log(numbersArray);
+
 });
