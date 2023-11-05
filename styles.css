@@ -9,10 +9,27 @@
     color: white;
     height: 5em;
     box-shadow:  5px 5px 20px rgba(0, 0, 0, 0.5); /* Add a shadow effect */
-    z-index: 100; /*fixes header to the top of the page at all times*/
     position: sticky;
     top: 0;
 }
+
+
+#startButton {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: Orange;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: black;
+  }
+  
+
+#startButton:hover {
+    background-color: #0056b3;
+}
+  
 
 h1 {
     text-align: center;
@@ -20,11 +37,16 @@ h1 {
     letter-spacing: 2.5px
 }
 
+html {
+    width: 300px;
+}
+
 body {
-    margin: 0; /* Remove default margin on the body */
-    padding: 0; /* Remove default padding on the body */
-    width: 100vw; /* Resizes the width*/
-    height: 100vh; /*Resizes the height*/
+    display: flex; /* Establishes a flex container */
+    justify-content: center; /* Centers flex items on the main axis (horizontal) */
+    align-items: center; /* Centers flex items on the cross axis (vertical) */
+    flex-direction: column; /* Aligns the flex container's children in a column */
+    text-align: center; /* Ensures that the text within the button is centered, if needed */
 }
 
 .mini-box {

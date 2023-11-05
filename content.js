@@ -67,6 +67,5 @@ function startProgram() {
             console.log(center);
             console.log(right);
 
-
         });
 }
