@@ -1,6 +1,6 @@
-var left = 0;
-var center = 0;
-var right = 0;
+left = 91.0102;
+center = 5.0000;
+right = 3.9898;
 
 async function query(data) {
 	const response = await fetch(
@@ -21,14 +21,12 @@ async function query(data) {
     var jsonObject = JSON.parse(response_string);
     var numbersArray = extractNumbers(jsonObject); // Get all numbers in an array
     console.log(numbersArray); //prints array
-    left = numbersArray[0] * 100;
-    center = numbersArray[1] * 100;
-    right = numbersArray[2] * 100;
-
+    //left = numbersArray[0] * 100;
+    //center = numbersArray[1] * 100;
+    //right = numbersArray[2] * 100;
     console.log(left);
     console.log(center);
     console.log(right);
-    decideBox();
 	return result;
 }
 
@@ -133,12 +131,11 @@ function decideBox(){
 }
 
 function displayBias(){
-    var contentToWrite = "This is the content to be added to the paragraph.";
-    const elements = document.querySelectorAll('p');
+    const elements = document.querySelectorAll('h4');
     var i = 0;
     // Find the paragraph element by its ID
     elements.forEach(function(element) {
-        const elementName = infoIds[i];
+        const elementName = [i];
         var paragraphElement = document.getElementById(elementName);
 
         // Create a text node with your content
@@ -181,8 +178,8 @@ sendPrompt(prompt)
 .catch((error) => {
     console.error('Error:', error);
 });
-
+*/
 window.onload = function() {
-    //decideBox();
-    displayBias();
-}*/
+    decideBox();
+    //displayBias();
+}
