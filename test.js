@@ -49,6 +49,6 @@ query({"inputs": "He alleges a “witch hunt” against him and says the varied 
 	response = JSON.stringify(response);
 	var jsonObject = JSON.parse(response);
 	var numbersArray = extractNumbers(jsonObject); // Get all numbers in an array
-	console.log(numbersArray);
+	console.log(numbersArray); //prints array
 
 });
