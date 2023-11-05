@@ -144,41 +144,4 @@ query({"inputs": queryString}).then((response) => {
             i = i + 1;
         });
     }
-    
-    //This is the utilization of chatgpt API to generate a summary of the webpage content
-    // Your OpenAI API key
-    const OPENAI_API_KEY = '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';
-
-    // Function to send a prompt to the OpenAI API
-    async function sendPrompt(prompt) {
-    const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
-        method: 'POST',
-        headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${OPENAI_API_KEY}`,
-        },
-        body: JSON.stringify({
-        prompt: prompt,
-        max_tokens: 150,
-        }),
-    });
-
-    const data = await response.json();
-    return data;
-    }
-
-    // Usage example
-    const prompt = 'Summarize,' + allText;
-    sendPrompt(prompt)
-    .then((data) => {
-        console.log(data.choices[0].text);
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });
-    
-    window.onload = function() {
-        decideBox();
-        displayBias();
-    };
 });
