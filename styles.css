@@ -26,24 +26,23 @@ body {
   .mini-box {
     width: 20px; /* Set the width of each mini box */
     height: 20px; /* Set the height of each mini box */
-    background-color: rgb(235, 235, 235); /* Default background color */
+    /*background-color: rgb(235, 235, 235); Default background color */
     text-align: center;
     line-height: 30px;
     margin: 5px; /* Add spacing between mini boxes */
     font-weight: bold;
     border: 1px solid #dadada;
-    display: inline-block
+    display: inline-flex;
+    
   }
   
-  .rated-5 { background-color: green; color: white; } /* Customize the style for rating 5 */
-  .rated-4 { background-color: lime; } /* Customize the style for rating 4 */
-  .rated-3 { background-color: yellow; } /* Customize the style for rating 3 */
-  .rated-2 { background-color: orange; color: white; } /* Customize the style for rating 2 */
-  .rated-1 { background-color: red; color: white; } /* Customize the style for rating 1 */
+.page{
+    padding: 10px 10px 10px 20px;
+}
   
-  
-  
-  
+h4{
+    display:inline-block;
+}
   
   
   
