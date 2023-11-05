@@ -4,7 +4,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 });
 
 
-
 async function query(data) {
 	const response = await fetch(
 		"https://api-inference.huggingface.co/models/valurank/distilbert-allsides",
