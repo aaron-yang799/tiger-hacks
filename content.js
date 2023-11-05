@@ -42,7 +42,7 @@ console.log(allText);
 let queryString = allText.substring(0,500);
 
 query({"inputs": queryString}).then((response) => {
-    console.log(response);
+    //console.log(response);
     const sortOrder = { 'left': 1, 'center': 2, 'right': 3 };
 
     response[0].sort((a, b) => sortOrder[a.label] - sortOrder[b.label]);
@@ -81,9 +81,6 @@ query({"inputs": queryString}).then((response) => {
         }],
     };
     
-    for (let i = 0; i < para.length; i++) {
-        console.log(para[i]);
-    }
     
     function getBias(index){
         var indPer = index % 15; //essentially cuts the array into halves so the same operations can be done at their seperate indexes.
@@ -149,32 +146,36 @@ query({"inputs": queryString}).then((response) => {
     }
     
     //This is the utilization of chatgpt API to generate a summary of the webpage content
-    const content = "I need a summary of this message."
-    const apiKey = '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';
-    const apiUrl = 'https://api.openai.com/v1/engines/davinci/completions';
-    
-    var helpme = `Summarize the content: ${content}`;
-    console.log(helpme);
-    //this fetch call uses the url and key to gain access to gpts API. Then a prompt is created that requests a summary of the provided content of max character size 150.
-    fetch(apiUrl, {
-        method: "POST", //means we are sending data to GPT
+    // Your OpenAI API key
+    const OPENAI_API_KEY = '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';
+
+    // Function to send a prompt to the OpenAI API
+    async function sendPrompt(prompt) {
+    const response = await fetch('https://api.openai.com/v1/engines/davinci-codex/completions', {
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer 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`,
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
         },
-        body: JSON.stringify({ 
-            prompt: `Summarize the content: ${content}`,
-            max_tokens: 150,
+        body: JSON.stringify({
+        prompt: prompt,
+        max_tokens: 150,
         }),
+    });
+
+    const data = await response.json();
+    return data;
+    }
+
+    // Usage example
+    const prompt = 'Summarize,' + allText;
+    sendPrompt(prompt)
+    .then((data) => {
+        console.log(data.choices[0].text);
     })
-        .then((response) => response.json())
-        .then((data2) => {
-            const summary = data2.choices[0].text;
-            console.log(summary);
-        })
-        .catch((error) => {
-            console.error("Error:", error);
-        });
+    .catch((error) => {
+        console.error('Error:', error);
+    });
     
     window.onload = function() {
         decideBox();
