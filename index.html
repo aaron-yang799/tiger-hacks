@@ -32,14 +32,16 @@
                     already able to do that ig.
                 </body>
                 <br>
-                <!--<div class = "box-container">
-                    <h4>Bias Rating</h4><div class="mini-box" id="SumBox1"></div><div class="mini-box" id="SumBox2"></div><div class="mini-box" id="SumBox3"></div><div class="mini-box" id="SumBox4"></div><div class="mini-box" id="SumBox5"></div>
-                </div>-->
-                <div class="floating-box"> 
-                    <canvas id="myPieChart"></canvas>
-                    <div id="chart-info">
-                        <p>dfsdfefs</p>
-                    </div>
+                <div class="rating-wrap">
+                    <h4>Bias Rating</h4>
+                    <div class="mini-box" id="SumBoxR1"></div><div class="mini-box" id="SumBoxR2"></div><div class="mini-box" id="SumBoxR3"></div><div class="mini-box" id="SummBoxR4"></div><div class="mini-box" id="SumBoxR5"></div>
+                    <br>
+                    <div class="mini-box" id="SumBoxC1"></div><div class="mini-box" id="SumBoxC2"></div><div class="mini-box" id="SumBoxC3"></div><div class="mini-box" id="SummBoxC4"></div><div class="mini-box" id="SumBoxC5"></div>
+                    <br>
+                    <div class="mini-box" id="SumBoxL1"></div><div class="mini-box" id="SumBoxL2"></div><div class="mini-box" id="SumBoxL3"></div><div class="mini-box" id="SummBoxL4"></div><div class="mini-box" id="SumBoxL5"></div>
+                </div>    
+                <div class="chart-info">
+                    <p id = "SumInfo"></p>
                 </div>
             </div>
             <div>
@@ -49,18 +51,17 @@
                     the given url. The model we are using gives a rating to all of the sources that it has been fed. So it shoould be an easy computation. Something along the lines of 'maximum of rating scale - rating of given source = opposite bias'. Then we can provide the link to the opposite source, and a summary of the differences.
                 </body>
                 <br>
-                <div class = "box-container">
-                    <h4>Bias Rating</h4><div class="mini-box" id="OppBox1"></div><div class="mini-box" id="OppBox2"></div><div class="mini-box" id="OppBox3"></div><div class="mini-box" id="OppBox4"></div><div class="mini-box" id="OppBox5"></div>
+                <div class="rating-wrap">
+                    <h4>Bias Rating</h4>
+                    <div class="mini-box" id="OppBoxR1"></div><div class="mini-box" id="OppBoxR2"></div><div class="mini-box" id="OppBoxR3"></div><div class="mini-box" id="OppBoxR4"></div><div class="mini-box" id="OppBoxR5"></div>
+                    <br>
+                    <h4>Bias Rating</h4>
+                    <div class="mini-box" id="OppBoxC1"></div><div class="mini-box" id="OppBoxC2"></div><div class="mini-box" id="OppBoxC3"></div><div class="mini-box" id="OppBoxC4"></div><div class="mini-box" id="OppBoxC5"></div>
+                    <br>
+                    <div class="mini-box" id="OppBoxL1"></div><div class="mini-box" id="OppBoxL2"></div><div class="mini-box" id="OppBoxL3"></div><div class="mini-box" id="OppBoxL4"></div><div class="mini-box" id="OppBoxL5"></div>
                 </div>
-            </div>
-            <div>
-                <h3 class = "section-title">Centralized Opinion</h3>
-                <body>
-                    This going to be the source on the topic with the most centralized rating. And this body will be the summary of that centralized text.Back at it again. The opposite Perspective is going to be the opposite of the rating that was given to the given url. The model we are using gives a rating to all of the sources that it has been fed. So it shoould be an easy computation. Something along the lines of 'maximum of rating scale - rating of given source = opposite bias'. Then we can provide the link to the opposite source, and a summary of the differences.
-                </body>
-                <br>
-                <div class = "box-container">
-                    <h4>Bias Rating</h4><div class="mini-box" id="CentBox1"></div><div class="mini-box" id="CentBox2"></div><div class="mini-box" id="CentBox3"></div><div class="mini-box" id="CentBox4"></div><div class="mini-box" id="CentBox5"></div>
+                <div class="chart-info">
+                    <p id = "OppInfo"></p>
                 </div>
             </div>
         </div>

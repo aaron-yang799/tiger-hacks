@@ -51,9 +51,16 @@ query({"inputs": test}).then((response) => {
 
 
 const boxIds = [
-    "SumBox1", "SumBox2", "SumBox3", "SumBox4", "SumBox5",
-    "OppBox1", "OppBox2", "OppBox3", "OppBox4", "OppBox5",
-    "CentBox1", "CentBox2", "CentBox3", "CentBox4", "CentBox5"
+    "SumBoxR1", "SumBoxR2", "SumBoxR3", "SumBoxR4", "SumBoxR5",
+    "SumBoxC1", "SumBoxC2", "SumBoxC3", "SumBoxC4", "SumBoxC5",
+    "SumBoxL1", "SumBoxL2", "SumBoxL3", "SumBoxL4", "SumBoxL5",
+    "OppBoxR1", "OppBoxR2", "OppBoxR3", "OppBoxR4", "OppBoxR5",
+    "OppBoxC1", "OppBoxC2", "OppBoxC3", "OppBoxC4", "OppBoxC5",
+    "OppBoxL1", "OppBoxL2", "OppBoxL3", "OppBoxL4", "OppBoxL5"
+];
+
+const infoIds = [
+    "SumInfo", "OppInfo", "CentBox"
 ];
 
 const data = {
@@ -93,14 +100,22 @@ function decideBox(){
     });
 }
 
-function decidePie(){
-    const ctx = document.getElementById("myPieChart").getContext("2d");
+function displayBias(){
+    var contentToWrite = "This is the content to be added to the paragraph.";
+    const elements = document.querySelectorAll('p');
+    var i = 0;
+    // Find the paragraph element by its ID
+    elements.forEach(function(element) {
+        const elementName = infoIds[i];
+        var paragraphElement = document.getElementById(elementName);
 
-    const config = {
-        type: 'pie',
-        data: data,
-    };
-    const myPieChart = new Chart(ctx, config);
+        // Create a text node with your content
+        var textNode = document.createTextNode(contentToWrite);
+
+        // Append the text node to the paragraph element
+        paragraphElement.appendChild(textNode);
+        i = i + 1;
+    });
 }
 
 //This is the utilization of chatgpt API to generate a summary of the webpage content
@@ -115,10 +130,10 @@ fetch(apiUrl, {
     method: "POST", //means we are sending data to GPT
     headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${apiKey}`,
+        "Authorization": `Bearer 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`,
     },
     body: JSON.stringify({ 
-        prompt: `Summarize the webpage: ${content}`,
+        prompt: `Summarize the content: ${content}`,
         max_tokens: 150,
     }),
 })
@@ -132,7 +147,8 @@ fetch(apiUrl, {
     });
 
 window.onload = function() {
-    //decideBox();
-    decidePie();
+    decideBox();
+    //decidePie();
+    displayBias();
 };
 
