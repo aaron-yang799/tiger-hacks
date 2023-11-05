@@ -6,7 +6,6 @@ for(elt of paragraphs)
     para.push(elt);
 }
 
-
 const boxIds = [
     "SumBox1", "SumBox2", "SumBox3", "SumBox4", "SumBox5",
     "OppBox1", "OppBox2", "OppBox3", "OppBox4", "OppBox5",
