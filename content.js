@@ -86,7 +86,7 @@ const infoIds = [
 
 const biasList = [
     "SumR", "SumC", "SumL",
-    "OppR", "OppC", "SumL"
+    "OppR", "OppC", "OppL"
 ]
 
 
@@ -126,7 +126,7 @@ function getColor(index){
     if(indPer <= 4){
         return 'red';
     }else if(indPer <= 9){
-        return 'black';
+        return 'green';
     }else{
         return 'blue';
     }
@@ -164,10 +164,11 @@ function displayBias(){
         var h4Element = document.getElementById(elementName);
 
         // Create a text node with your content
-        var textNode = document.createTextNode(array[i]);
+        var textNode = document.createTextNode('\n   ' + array[i].toFixed(1) + '%');
 
         // Append the text node to the paragraph element
         h4Element.appendChild(textNode);
+        //h4Element.appendChild(' %');
         i = i + 1;
     });
 }
@@ -206,5 +207,5 @@ sendPrompt(prompt)
 */
 window.onload = function() {
     decideBox();
-    //displayBias();
+    displayBias();
 }
